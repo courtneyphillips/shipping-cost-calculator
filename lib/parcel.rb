@@ -20,7 +20,7 @@ class Parcel
     total += @distance.*(0.01)
 
     if @gift_wrapping
-      total += self.surface_area.*(0.01)
+      total += @surface_area.*(0.01)
     end
 
     total
