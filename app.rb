@@ -13,7 +13,13 @@ get('/result') do
   height        = params.fetch('height').to_i()
   weight        = params.fetch('weight').to_i()
   distance      = params.fetch('distance').to_i()
-  gift_wrapping = params.fetch('gift-wrapping').to_i()
+  gift_wrapping = nil
+
+  if params.include?('gift-wrapping')
+    gift_wrapping = true
+  else
+    gift_wrapping = false
+  end
 
   @result = Parcel.new(length, width, height, weight, distance, gift_wrapping).ship_cost()
 

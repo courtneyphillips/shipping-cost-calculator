@@ -1,5 +1,5 @@
 class Parcel
-  define_method(:initialize) do |length, width, height, weight, distance, gift_wrapping|
+  define_method(:initialize) do |length, width, height, weight, distance, gift_wrapping = false|
     @length        = length
     @width         = width
     @height        = height

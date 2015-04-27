@@ -10,8 +10,8 @@ describe("the shipping cost path", {:type => :feature}) do
     fill_in('height', :with => 5)
     fill_in('weight', :with => 2)
     fill_in('distance', :with => 10)
-    fill_in('gift-wrapping', :with => false)
-    click_button('Submit')
-    expect(page).to have_content(2.60)
+    check('gift-wrapping')
+    click_button('Ship!')
+    expect(page).to have_content(3.2)
   end
 end
